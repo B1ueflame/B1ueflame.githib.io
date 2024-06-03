@@ -8,10 +8,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
         @font-face {
-        font-family: "DisposableDroid BB";
-        src: url("fonts\\DisposableDroidBB_bld.ttf") format('truetype'),
-            url("fonts\\DisposableDroidBB_bld.ttf") format('truetype'),
-            url("fonts\\DisposableDroidBB_bld.ttf") format('truetype');
+            font-family: "DisposableDroid BB";
+            src: url("fonts\\DisposableDroidBB_bld.ttf") format('truetype'),
+                url("fonts\\DisposableDroidBB_bld.ttf") format('truetype'),
+                url("fonts\\DisposableDroidBB_bld.ttf") format('truetype');
         }
         @font-face {
             font-family: "TeenyTinyPixls";
@@ -28,10 +28,36 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            flex-direction: column;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-link {
+            color: white;
+            font-size: 18px;
+            font-family: "Roboto", sans-serif;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #cccccc;
         }
 
         #content h1, #content h2 {
-        font-family: "DisposableDroid BB", sans-serif;
+            font-family: "DisposableDroid BB", sans-serif;
         }
 
         #content h1 {
@@ -135,11 +161,13 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background-image: url('https://via.placeholder.com/50'); /* Placeholder image */
             background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border: none;
             cursor: pointer;
             z-index: 10;
+            background-image: url('https://i.imgur.com/k6rhOtN.gif'), url('assets/muted.png'); /* Initial state */
         }
 
         @keyframes earlybundleanim{
@@ -150,6 +178,13 @@
     </style>
 </head>
 <body>
+    <div id="navbar">
+        <a href="#bio" class="nav-link">Bio</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#store" class="nav-link">Store</a>
+        <a href="#rat" class="nav-link">Rat</a>
+    </div>
+
     <video autoplay loop muted id="videoBG">
         <source src="assets/rip-pop.mp4" type="video/mp4">
     </video>
