@@ -42,6 +42,24 @@
             justify-content: center;
         }
 
+        #homeLink {
+            position: absolute;
+            top: 0px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        #homeImage {
+            height: 80px; /* Adjust the height as needed */
+            margin-right: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        #homeImage:hover {
+            transform: scale(1.1);
+        }
+
         .nav-link {
             color: white;
             font-size: 18px;
@@ -179,6 +197,9 @@
 </head>
 <body>
     <div id="navbar">
+        <a href="index.html" id="homeLink">
+            <img src="assets/blueflame.gif" alt="Home" id="homeImage">
+        </a>
         <a href="#bio" class="nav-link">Bio</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#store" class="nav-link">Store</a>
@@ -226,29 +247,26 @@
 
         animateTitle(); // Start the animation
 
-document.addEventListener('DOMContentLoaded', function () {
-    var video = document.getElementById('videoBG');
-    var button = document.getElementById('audioButton');
-    if (video.muted) {
-        button.style.backgroundImage = "url('assets/muted.png')";
-    } else {
-        button.style.backgroundImage = "url('assets/unmuted.png')";
-    }
-});
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('videoBG');
+            var button = document.getElementById('audioButton');
+            if (video.muted) {
+                button.style.backgroundImage = "url('assets/muted.png')";
+            } else {
+                button.style.backgroundImage = "url('assets/unmuted.png')";
+            }
+        });
 
-document.getElementById('audioButton').addEventListener('click', function () {
-    var video = document.getElementById('videoBG');
-    var button = document.getElementById('audioButton');
-    video.muted = !video.muted;
-    if (video.muted) {
-        button.style.backgroundImage = "url('assets/muted.png')";
-    } else {
-        button.style.backgroundImage = "url('assets/unmuted.png')";
-    }
-});
-
-
-        
+        document.getElementById('audioButton').addEventListener('click', function () {
+            var video = document.getElementById('videoBG');
+            var button = document.getElementById('audioButton');
+            video.muted = !video.muted;
+            if (video.muted) {
+                button.style.backgroundImage = "url('assets/muted.png')";
+            } else {
+                button.style.backgroundImage = "url('assets/unmuted.png')";
+            }
+        });
     </script>    
 </body>
 </html>
