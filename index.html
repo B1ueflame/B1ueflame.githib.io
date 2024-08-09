@@ -40,6 +40,7 @@
             z-index: 10;
             display: flex;
             justify-content: center;
+            border-bottom: 2px solid #6a0dad;
         }
 
         #homeLink {
@@ -195,17 +196,17 @@
         }
     </style>
 </head>
+</head>
 <body>
     <div id="navbar">
-        <a href="index.html" id="homeLink">
+        <a href="#" id="homeLink" onclick="loadContent('home')">
             <img src="assets/blueflame.gif" alt="Home" id="homeImage">
         </a>
-        <a href="bio.html" class="nav-link">Bio</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="store.html" class="nav-link">Store</a>
-        <a href="rat.html" class="nav-link">Rat</a>
+        <a href="#" class="nav-link" onclick="loadContent('bio')">Bio</a>
+        <a href="#" class="nav-link" onclick="loadContent('services')">Sold Accounts</a>
+        <a href="#" class="nav-link" onclick="loadContent('store')">Store</a>
+        <a href="#" class="nav-link" onclick="loadContent('rat')">Rat</a>
     </div>
-    
 
     <video autoplay loop muted id="videoBG">
         <source src="assets/rip-pop.mp4" type="video/mp4">
@@ -214,20 +215,11 @@
     <div id="tint"></div>
 
     <div id="content">
-        <h1 id="title">~Blue~</h1>
-        <h2 style="margin-top: 15px;">Communications:</h2>
-        <p><a href="https://oguser.com/blue" target="_blank" class="member-link" style="margin-top: 25px;">OGUser</a></p>
-        <P><a href="https://discord.gg/snipes" target="_blank" class="member-link">Discord Server</a></p>
-        <div style="margin-top: 50px;">
-            <a href="https://t.me/blueflamelabs" target="_blank" class="social-icon">
-                <i class="fab fa-telegram"></i>
-            </a>
-            <a href="https://discord.com/invite/DJvA9mSr" target="_blank" class="social-icon">
-                <i class="fab fa-discord"></i>
-            </a>
-        </div>
+        <!-- Initial home content will be loaded here -->
     </div>
+
     <button id="audioButton"></button>
+
     <script>
         var title = "Blue Flame"; // The title you want to animate
         var counter = 0;
@@ -268,6 +260,73 @@
                 button.style.backgroundImage = "url('assets/unmuted.png')";
             }
         });
-    </script>    
+
+        function loadContent(page) {
+            let contentHtml = '';
+
+            switch (page) {
+                case 'bio':
+                    contentHtml = `
+                        <h1 id="title">~Blue~</h1>
+                        <h2>About Me</h2>
+                        <p>Welcome to my bio page! Here’s a bit about me:
+
+                            My name is blue.
+Known coding languages: Python, Java, and HTML 
+I specialize in making custom Discord bots and username snipers/turbos. I have contributed to 2 Minecraft username claimers, and designed an Instagram turbo.
+
+Currently I buy/sell/flip Minecraft and Discord usernames on OGUser.</p>
+                        <!-- Add more bio content here -->
+                    `;
+                    break;
+                case 'services':
+                    contentHtml = `
+                        <h1 id="title">Sold Accounts</h1>
+                       
+                        <p>adding soon</p>
+                        <ul>
+                            <li>Service 1</li>
+                            <li>Service 2</li>
+                            <li>Service 3</li>
+                        </ul>
+                    `;
+                    break;
+                case 'store':
+                    contentHtml = `
+                        <h1 id="title">~Blue~</h1>
+                        <h2>Store</h2>
+                        <p>Current Accounts for sale!</p>
+                    `;
+                    break;
+                case 'rat':
+                    contentHtml = `
+                        <h1 id="title">~Blue~</h1>
+                        <h2>Rat</h2>
+                        <p>This section is under construction. Stay tuned!</p>
+                    `;
+                    break;
+                default:
+                    contentHtml = `
+                        <h1 id="title">~Blue~</h1>
+                        <h2 style="margin-top: 15px;">Communications:</h2>
+                        <p><a href="https://oguser.com/blue" target="_blank" class="member-link" style="margin-top: 25px;">OGUser</a></p>
+                        <p><a href="https://discord.gg/snipes" target="_blank" class="member-link">Discord Server</a></p>
+                        <div style="margin-top: 50px;">
+                            <a href="https://t.me/blueflamelabs" target="_blank" class="social-icon">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://discord.com/invite/DJvA9mSr" target="_blank" class="social-icon">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    `;
+            }
+
+            document.getElementById('content').innerHTML = contentHtml;
+        }
+
+        // Load the original homepage content by default
+        loadContent('home');
+    </script>
 </body>
 </html>
