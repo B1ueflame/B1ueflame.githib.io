@@ -62,11 +62,12 @@
         }
 
         .nav-link {
-            color: white;
-            font-size: 18px;
-            font-family: "Roboto", sans-serif;
-            padding: 15px 20px;
-            text-decoration: none;
+            color: #cccccc; /* gray */
+            font-size: 22px;
+            padding: 15px 35px;
+            font-family: "DisposableDroid BB", sans-serif;
+            text-decoration: none !important;
+            /*transition: color 0.3s ease;*/
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -240,6 +241,8 @@
 
         animateTitle(); // Start the animation
 
+
+        
         document.addEventListener('DOMContentLoaded', function () {
             var video = document.getElementById('videoBG');
             var button = document.getElementById('audioButton');
@@ -269,10 +272,7 @@
                     contentHtml = `
                         <h1 id="title">~Blue~</h1>
                         <h2>About Me</h2>
-                        <p>Welcome to my bio page! Here’s a bit about me:
-
-                            My name is blue.
-Known coding languages: Python, Java, and HTML 
+                        <p>My name is blue. Known coding languages: Python, Java, and HTML. 
 I specialize in making custom Discord bots and username snipers/turbos. I have contributed to 2 Minecraft username claimers, and designed an Instagram turbo.
 
 Currently I buy/sell/flip Minecraft and Discord usernames on OGUser.</p>
